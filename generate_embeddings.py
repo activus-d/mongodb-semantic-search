@@ -15,7 +15,7 @@ def get_embedding(text, precision="float32"):
 # Replace the placeholder with your Atlas connection string:
 mongodb_client = MongoClient(
     "mongodb+srv://<USERNAME>:<PASSWORD>@<HOST>/",
-    appname="devrel-tutorial-python-vectorsearch"
+    appname="devrel-tutorial-python-semantic-search"
 )
 
 collection = mongodb_client["sample_db"]["documents"]
@@ -46,6 +46,8 @@ for doc in sample_documents:
         # The vector lives alongside your original data in the same document:
         "embedding": embedding
     })
+# Drop the collection before each run to avoid inserting duplicate documents:
+collection.drop()
 
 result = collection.insert_many(docs_to_insert)
 print(f"Inserted {len(result.inserted_ids)} documents with embeddings.")

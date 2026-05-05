@@ -2,16 +2,15 @@ from generate_query_vector import get_query_embedding
 from pymongo import MongoClient
 
 # Replace the placeholder with your Atlas connection string:
-# mongodb_client = MongoClient(
-#     "mongodb+srv://<USERNAME>:<PASSWORD>@<HOST>/",
-#     appname="devrel-tutorial-python-vectorsearch"
-# )
-
+mongodb_client = MongoClient(
+    "mongodb+srv://<USERNAME>:<PASSWORD>@<HOST>/",
+    appname="devrel-tutorial-python-semantic-search"
+)
 
 collection = mongodb_client["sample_db"]["documents"]
 
 # Generate a query vector from the user's search input:
-user_query = "fully managed cloud database"
+user_query = "I need an automated, scalable system for serious information storage"
 query_vector = get_query_embedding(user_query)
 
 # Define the $vectorSearch aggregation pipeline:

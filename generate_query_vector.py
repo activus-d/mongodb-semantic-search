@@ -11,7 +11,7 @@ def get_query_embedding(text, precision="float32"):
     return model.encode(text, precision=precision).tolist()
 
 
-user_query = "fully managed cloud database"
+user_query = "I need an automated, scalable system for serious information storage"
 query_vector = get_query_embedding(user_query)
 print(f"Query: '{user_query}'")
 print(f"Vector dimensions: {len(query_vector)}")

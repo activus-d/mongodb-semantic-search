@@ -5,7 +5,7 @@ import time
 # Replace the placeholder with your Atlas connection string:
 mongodb_client = MongoClient(
     "mongodb+srv://<USERNAME>:<PASSWORD>@<HOST>/",
-    appname="devrel-tutorial-python-vectorsearch"
+    appname="devrel-tutorial-python-semantic-search"
 )
 
 # Point to the same database and collection you used in the previous step:
