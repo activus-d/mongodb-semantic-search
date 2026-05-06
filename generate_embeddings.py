@@ -15,7 +15,7 @@ def get_embedding(text, precision="float32"):
 # Replace the placeholder with your Atlas connection string:
 mongodb_client = MongoClient(
     "mongodb+srv://<USERNAME>:<PASSWORD>@<HOST>/",
-    appname="devrel-tutorial-python-semantic-search"
+    appname="devrel-tutorial-python-vector-search"
 )
 
 collection = mongodb_client["sample_db"]["documents"]
